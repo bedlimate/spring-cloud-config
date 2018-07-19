@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: service-1
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.jdbc.driver
+      username: root
+      password: liuyun123
+      jdbc-url: jdbc:mysql://localhost:3306/spring_cloud_demo
+      #等待连接池分配连接的最大等待时间(单位： ms)，超过这个时间抛出 SQLException
+      connection-timeout: 5000
+      #空闲连接最大存活时间(单位： ms)，超时被释放
+      idle-timeout: 10000
+
+#    driver-class-name: com.mysql.jdbc.Driver
+#    username: root
+#    password: liuyun123
+#    url: jdbc:mysql://localhost:3306/spring_cloud_demo
+
+server:
+  port: 8011
+
+#注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: mapper/*.xml
+
+
+
